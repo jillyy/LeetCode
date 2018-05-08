@@ -1,0 +1,33 @@
+287. Find the Duplicate Number
+
+sort the numbers and find the companied same number
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i-1]) {
+                return nums[i];
+            }
+        }
+
+        return -1;
+    }
+}
+
+insert elements into data structure, interate over the array
+insert every number, and check duplicate before it
+
+class Solution {
+    public int findDuplicate(int[] nums) {
+        Set<Integer> seen = new HashSet<Integer>();
+        for (int num : nums) {
+            if (seen.contains(num)) {
+                return num;
+            }
+            seen.add(num);
+        }
+
+        return -1;
+    }
+}
