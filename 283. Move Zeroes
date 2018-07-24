@@ -1,0 +1,40 @@
+2 sols
+
+1. move the non zero numbers to head, and fill the rest of array with zeros
+class Solution {
+    public void moveZeroes(int[] nums) {
+        int index = 0;
+        for(int i=0; i<nums.length; i++){
+            if (nums[i] != 0){
+                nums[index] = nums[i];
+                index++;
+            }
+        }
+        for(int i=index; i<nums.length; i++){
+            nums[i] = 0;
+        }
+        
+    }
+}
+
+2. point the numbers one by one, move non zeros to the left and zeros to the right
+
+public class Solution {
+    /**
+     * @param nums an integer array
+     * @return nothing, do this in-place
+     */
+    public void moveZeroes(int[] nums) {
+        // Write your code here
+        int left = 0, right = 0;
+        while (right < nums.length) {
+            if (nums[right] != 0) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+                left++;
+            }
+            right++;
+        }
+    }
+}
