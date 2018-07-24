@@ -1,5 +1,5 @@
 When required to return, remeber to throw exception
-to create a new array -> int[] name = {i,j};
+to create a new array -> int[] sum = new int[] {0,0};
 
 public int[] twoSum(int[] nums, int target) {
     for (int i = 0; i < nums.length; i++) {
