@@ -1,0 +1,29 @@
+[3,9,20,null,null,15,7]
+  3
+ / \
+9   20
+   /  \
+  15   7
+  
+  left: 3的root.left不是null，进入recursion，9的root.left是null，return0， recursion结束回到上一次（3这个root），通过return＋1 得到left＝1， 如此最后得到right＝2，最后return的时候＋1，height＝3
+  
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        if root = null{
+            return 0;
+        }
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
+    }
+}
