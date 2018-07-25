@@ -1,5 +1,5 @@
 先把生成的array从左到右乘起来，再从右到左乘起来，把两样相乘
-从左到右时arrya的第一个数仍然为0，需先设置成1
+从左到右时array的第一个数仍然为0，需先设置成1
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {
