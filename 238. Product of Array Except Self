@@ -1,22 +1,19 @@
-先把生成的array从左到右乘起来，再从右到左乘起来，把两样相乘
-从左到右时array的第一个数仍然为0，需先设置成1
+第一个for loop从左到右把前面的数字乘积存到新创建array的对应位置
+第二个for loop从右到左把后一位数字和存起来的之后所有数字的乘积相乘放到对应位置
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {
-        int leng = nums.length;
-        int[] arr = new int[leng];
-        arr[0] = 1;
-        int left = 1;
-        for (int i=1; i<leng; i++) {
-            left = left * nums[i-1];
-            arr[i] = left;
+        int[] rst = new int[nums.length];
+        int n = nums.length;
+        rst[0] = 1;
+        for (int i = 1; i < n; i++) {
+            rst[i]=rst[i-1]*nums[i-1];
         }
-        
-        int right = 1;
-        for (int i=leng-2; i>=0; i--){
-            right = right * nums[i+1];
-            arr[i] = right * arr[i];
+        int hold = 1;
+        for (int i = n-1; i >= 0; i--) {
+            rst[i] *= hold;
+            hold *= nums[i];
         }
-        return arr;
+        return rst;
     }
 }
