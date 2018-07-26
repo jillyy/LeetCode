@@ -1,5 +1,9 @@
 第一个for loop从左到右把前面的数字乘积存到新创建array的对应位置
 第二个for loop从右到左把后一位数字和存起来的之后所有数字的乘积相乘放到对应位置
+例如 [1,2,3,4]
+第一个for loop结束[1, 1, 2, 6]
+第二个for loop将原本的数乘以后一位的数 和后一位之后所有数（保存在hold常数中）
+即[1*nums[1]*hold(1*4*3＊2), 1*nums[2]*hold(1*4*3), 2*nums[3]*hold(1＊4), 6*hold(1)]
 
 class Solution {
     public int[] productExceptSelf(int[] nums) {
